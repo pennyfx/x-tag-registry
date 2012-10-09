@@ -1,0 +1,20 @@
+extends layout
+
+append head
+	script(type="text/javascript", src="/js/x-tag.js")
+	base(href=base_url)
+
+block content
+	.demo-box
+		h3 Demo
+		dl 
+			dd !{demo}
+		h3 About
+		dl#tag-info
+				
+append scripts
+	script
+		var tag_info = !{tag_info};
+		tag_info.compatibility = JSON.parse(tag_info.compatibility);
+		tag_info.author = '#{author}';
+	script(type="text/javascript", src="/js/demo.js")
